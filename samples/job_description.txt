@@ -1,0 +1,27 @@
+Software Development Engineer Intern
+
+About the role
+We are looking for a Software Development Engineer Intern to join our backend team in Bengaluru. You will work with experienced engineers to design, build and test scalable web services.
+
+Responsibilities
+- Develop and maintain REST APIs using Python and Flask or Django
+- Write clean, tested and well-documented code
+- Work with SQL databases such as PostgreSQL and MySQL
+- Use Git and GitHub for version control and code reviews
+- Debug production issues and improve application performance
+- Collaborate with product and design teams in an agile environment
+
+Requirements
+- Currently pursuing a B.E./B.Tech in Computer Science or a related field
+- Strong knowledge of Python and object-oriented programming
+- Solid understanding of data structures and algorithms
+- Familiarity with REST API design and JSON
+- Basic knowledge of SQL and relational databases
+- Experience with Git
+
+Nice to have
+- Exposure to Docker, AWS or cloud platforms
+- Knowledge of unit testing with pytest
+- Understanding of CI/CD pipelines
+- Experience with Linux
+- Good communication and problem-solving skills
