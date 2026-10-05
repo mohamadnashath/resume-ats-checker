@@ -1,5 +1,7 @@
 import spacy
 import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 from extract import extract_pdf, extract_docx 
 nlp=spacy.load("en_core_web_sm")
 def eng(path):
@@ -17,6 +19,12 @@ def find_skills(text):
             found.add(skill)
     return found
 
+def similarity(resume_text,jd_text):
+    vectorizer=TfidfVectorizer(stop_words="english")
+    vectors=vectorizer.fit_transform([resume_text,jd_text])
+    result=cosine_similarity(vectors[1],vectors[0])
+    return result[0][0]*100
+
 SKILLS = [
     "python", "java", "javascript", "c++", "sql", "mysql", "postgresql",
     "sqlite", "mongodb", "flask", "django", "fastapi", "react", "node.js",
@@ -30,8 +38,6 @@ SKILLS = [
 if __name__=="__main__":
     with open("samples/job_description.txt") as f:
         jd_text=f.read()
-
-    
     resume_text = extract_docx("samples/resume_data_science.docx")
     jd_skills = find_skills(jd_text)
     resume_skills=find_skills(resume_text)
@@ -42,5 +48,6 @@ if __name__=="__main__":
     print("Matched:", sorted(matched))
     print("Missing:", sorted(missing))
     print("Score:", round(score), "%")
+    print(similarity(resume_text,jd_text))
 
 
