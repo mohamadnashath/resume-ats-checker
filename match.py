@@ -3,6 +3,7 @@ import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from extract import extract_pdf, extract_docx 
+
 nlp=spacy.load("en_core_web_sm")
 def eng(path):
     with open(path) as f:
@@ -49,6 +50,6 @@ if __name__=="__main__":
     print("Missing:", sorted(missing))
     print("Score:", round(score), "%")
     print("Similarity:", round(similarity(resume_text,jd_text), 1))
-    print("Score:", round(score), "%")
+
 
 
