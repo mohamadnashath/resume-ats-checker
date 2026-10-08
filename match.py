@@ -48,6 +48,7 @@ if __name__=="__main__":
     print("Matched:", sorted(matched))
     print("Missing:", sorted(missing))
     print("Score:", round(score), "%")
-    print(similarity(resume_text,jd_text))
+    print("Similarity:", round(similarity(resume_text,jd_text), 1))
+    print("Score:", round(score), "%")
 
 
