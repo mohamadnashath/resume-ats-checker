@@ -1,15 +1,7 @@
-import spacy
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from extract import extract_pdf, extract_docx 
-
-nlp=spacy.load("en_core_web_sm")
-def eng(path):
-    with open(path) as f:
-        text=f.read()
-    doc=nlp(text)
-    return doc
 
 def find_skills(text):
     text=text.lower()
