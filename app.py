@@ -3,8 +3,8 @@ from match import find_skills
 from checks import check_length, check_sections, check_tables, check_tables_docx
 import streamlit as st
 st.title("Resume ATS Checker")
-resume_file=st.file_uploader("upload your resume",type=["pdf","docx"])
-jd_text=st.text_area("paste the job description")
+resume_file = st.file_uploader("Upload your resume", type=["pdf", "docx"])
+jd_text = st.text_area("Paste the job description")
 analyze=st.button("Analyze")
 if analyze:
     if resume_file is None or not jd_text.strip():
@@ -27,7 +27,7 @@ if analyze:
             st.metric("Match score", f"{round(score)}%")
             st.write("Matched: " + (", ".join(sorted(matched)) or "none"))
             st.write("Missing: " + (", ".join(sorted(missing)) or "none"))
-        st.subheader("formatting checks")
+        st.subheader("Formatting checks")
         warnings_found=False
 
         length_warning=check_length(resume_text)

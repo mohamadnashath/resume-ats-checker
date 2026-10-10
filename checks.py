@@ -1,19 +1,26 @@
 import pdfplumber
+import re
 from docx import Document
 def check_length(text):
     word_count=len(text.split())
     if word_count<75:
-        return "mate your resume is too short !!"
+        return f"Resume is very short ({word_count} words). Add more detail about your experience and projects."
     else:
         return None
+SECTIONS = {
+    "experience": ["experience", "work experience", "work history", "employment", "work", "internship"],
+    "education": ["education", "academic"],
+    "skills": ["skills", "technical skills"],
+}
+
 def check_sections(text):
-    text=text.lower()
-    mand_terms=["experience", "education", "skills"]
-    missing=[]
-    for mand in mand_terms:
-        if mand not in text:
-            missing.append(mand)
-    return missing       
+    lines = [line.strip().lower() for line in text.splitlines()]
+    missing = []
+    for section, names in SECTIONS.items():
+        found = any(re.match(re.escape(name) + r"\b", line) for line in lines for name in names)
+        if not found:
+            missing.append(section)
+    return missing
 def check_tables(path):
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
