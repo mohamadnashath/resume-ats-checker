@@ -33,7 +33,13 @@ SKILLS = [
     "linux", "rest api", "json", "pytest", "unit testing", "ci/cd", "agile",
     "data structures", "algorithm", "object-oriented programming",
     "pandas", "numpy", "scikit-learn", "tensorflow", "machine learning",
-    "nlp", "power bi", "spring boot",
+    "nlp", "power bi", "spring boot", "typescript", "php", "kotlin", "swift", "bootstrap", "tailwind",
+    "next.js", "jquery", "redux",
+    "redis", "oracle", "firebase", "tableau", "matplotlib",
+    "deep learning", "pytorch", "opencv",
+    "jenkins", "postman", "jira", "vs code", "bash", "shell scripting",
+    "oop", "microservices", "devops", "tdd", "system design",
+    "cloud computing", "gcp", "terraform",
 ]
 
 if __name__=="__main__":
